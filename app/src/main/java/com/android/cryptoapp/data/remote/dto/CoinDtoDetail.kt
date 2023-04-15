@@ -1,5 +1,7 @@
 package com.android.cryptoapp.data.remote.dto
 
+import com.android.cryptoapp.domain.model.CoinDetail
+
 data class CoinDto(
     val description: String,
     val development_status: String,
@@ -26,3 +28,17 @@ data class CoinDto(
     val type: String,
     val whitepaper: Whitepaper
 )
+
+
+fun CoinDto.toCoinDetail(): CoinDetail {
+    return CoinDetail(
+        coinId = id,
+        name = name,
+        description = description,
+        symbol = symbol,
+        rank = rank,
+        isActive = is_active,
+        tags = tags.map { it.name },
+        team = team
+    )
+}

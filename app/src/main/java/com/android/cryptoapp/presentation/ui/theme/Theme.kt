@@ -1,4 +1,4 @@
-package com.android.cryptoapp.ui.theme
+package com.android.cryptoapp.presentation.ui.theme
 
 import android.graphics.Color
 import androidx.compose.foundation.isSystemInDarkTheme
